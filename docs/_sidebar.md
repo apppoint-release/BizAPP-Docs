@@ -1,5 +1,8 @@
 * Getting Started
 	* [Home](/)
-	* [Doc1](doc1.md "Doc - 1")
+	* [systeminstallations](systemsetup.md "System Installation")
+	* [BizAppReleasebuilds](bizappbuilds.md "BizAPP Release Builds")
+ 	* [cloning_repo](clonerepo.md "Cloning the Build")
 * Installation
-	* [Doc2](doc2.md "Doc - 2")
+	* [installbizapp](installbizapp.md "Installing BizAPP")
+	* [startingmodeler](startmodeler.md)"Starting the Modeler")

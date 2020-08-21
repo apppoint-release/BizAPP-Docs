@@ -1,3 +1,3 @@
-# LMExcellence 
+# Headline
 
-> The Learning Management System.
+> An awesome project.

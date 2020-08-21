@@ -1,10 +1,3 @@
----
-id: doc2
-title: Initial Setup
-sidebar_label: Initial setup
----
-[Install_Services](/images/installservices.png)
-This document outlines the steps for *Initial Setup* 
 
 ## INITIAL SETUP 
 The system should be set-up with required installations, pre-requisite software’s and made ready to install the Modeler.

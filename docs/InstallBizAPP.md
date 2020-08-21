@@ -1,10 +1,4 @@
----
-/-id: 03
-title: This is Document Number 3
-sidebar_label: Installing the Modeler
----
-
-## Installing BizAPP
+# Installing BizAPP
 
 To install Bizapp build (Devrelease) on your system:
 
