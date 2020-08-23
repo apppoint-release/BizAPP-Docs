@@ -1,6 +1,5 @@
-# Installing BizAPP
 
-To install Bizapp build (Devrelease) on your system:
+To install Bizapp build (Devrelease)on your system:
 
 1. On your Desktop, click **Start** and open **Windows Powershell** and **Run as Administrator**. 
 2. Type **Powershell** at the Command Prompt. The PS C:\Windows\system32\ appears at the prompt.
@@ -14,50 +13,47 @@ Get-Execution Policy
 ```
 Set-executionpolicy remotesigned
 ```
-5.	From the Command prompt, point to your local repository folder, Say E:/Localrepo/DeveRelease
-6.	Run the build installation command:  
+5.	From the Command prompt, point to your local repository folder, for instance, E:/Localrepo/DeveRelease
+6.	Run the build installation command  
 
 ```
 .\Install.ps1  
 ```
-
-![install](/images/install_ps1.png)
+![install](/images/installbizapp/install_ps1.png)
 
 7.	Add storage path to store temporary files, for e.g., E:\Temp
 8.	To set start-up services and IIS, run as domain User Account and then enter the inputs upon prompt. 
 9.	System prompts user **Do you want to set up services to your user account (Y/N)?**  Type **Y**.
 
-![install_services](/images/install_services.pn)
+![install_services](/images/installbizapp/install_services.pn)
 
 10.	Enter your **UserName, EmailID** and **Password**(System Password) for authentication. 
-11.	System prompts user - **Do you require local redis services (Y/N)**. Type **Y**.
+11.	System prompts user:**Do you require local redis services (Y/N)**. Type **Y**.
 
-![install_redis](/images/install_redis.png)
+![install_redis](/images/installbizapp/install_redis.png)
 
-12.	System prompts - **If user wants Ngen assemblies? (Y/N)?**. Type **Y**.  All the New-Gen services will be installed.
+12.	System prompts: **If user wants Ngen assemblies? (Y/N)?**. Type **Y**.  All the New-Gen services will be installed.
 
-:::NOTE
-	It is not mandatory for user to install the Ngen assemblies. 
-:::
+>NOTE : It is not mandatory for user to install the Ngen assemblies. 
 
-![install_ngen](/images/install_ngen.png)
+![install_ngen](/images/installbizapp/install_ngen.png)
 
-Now, BizAPP build (Devrelease)is installed.The Modeler will be available after all the BizAPP services on your system are started.
+The Devrelease build of BizAPP is installed. Modeler will be available after BizAPP services are restarted on your system.
 
-## Starting BizAPP Services
+## BizAPP Services
 
-When the modeler is installed for the first-time, the services will be automatically created during build installation.If services of the previous build 
-are currently running then those services have to be manually deleted. 
+When modeler is installed for the first-time, the services will be automatically installed. If system has builds(older builds) then those services would be currently running. The old   
+of BizAPP services of the previous build are currently running then those services have to be manually deleted. 
 
-### Deleting Services of Previous build
+### Delete Services - Previous Build
 
 The services of previous build (that is un-installed) has to be removed.
 
 1.	Open the **Windows Command prompt>> Run as Administrator**.
 2.	In C:\Windows\System32>sc delete <name of the old service> for e.g., sc delete BizAPP-Dev Hosting Agent 
-3.	Press **Enter**. Then, [sc] DeleteService Success appears on screen.
+3.	Press **Enter**. Then,[sc] DeleteService Success appears on screen.
 
-### Starting Services of New build
+### Start Services - New Build
 
 To create new services for the current build installed:
 
@@ -73,75 +69,64 @@ Powershell –f <path of the devrelease folder>\Install.ps1
 6. Enter **Username**: <enter your company/personal account>
 7. Enter **Password**: <type in windows login password>
 8. The services for **BizAPP–Dev–Registry Service** will be created. Then, the IIS AppPool and site is created.
-9. System prompts **Do you want Ngen assemblies? (Y/N)**:  Type **Y**. All the Ngen services will get installed. 
-10. Open the Command prompt and enter **Services.msc**.
-11. Check, if the following BizAPP services are available. 
+9. System prompts **Do you want Ngen assemblies? (Y/N)**: Type **Y**. All the Ngen services will get installed. 
+10.Open the Command prompt and enter **Services.msc**.
+11.Check, if the following BizAPP services are available. 
 
-```
-BizAPP Registry 
-BizAPP BootStrap Services
-BizApp-Dev-Hosting Agent
-BizAPP registry
-BizApp-Dev-LicenseService
-bizapp-dev-backplane-1
-bizapp-dev-backplane-2 
-```
-12.	Right-click on each of service, and Select **Start**. 
+>BizAPP Registry 
+>BizAPP BootStrap Services
+>BizApp-Dev-Hosting Agent
+>BizAPP registry
+>BizApp-Dev-LicenseService
+>bizapp-dev-backplane-1
+>bizapp-dev-backplane-2 
 
-## Configuring Files in the Repository (Local)
+12.	Right-click on each of service,and Select **Start**. 
 
-Below are the configurations required for files within the folders of your system.
+## Configure Local Repository files
 
-**A. Configuring the Config_RecruitMgnt.xml**
+Check the configurations required for files within the folders of your system.
 
-You have to configure the respective solution configuration file to point to the local build repository. Administrator will provide the current user DB connection string that has to be added to it. 
+**A. Configure SolutionConfigs/<Config_RecruitMgnt.xml>**
 
-1.	In your system, open the **SolutionConfigs** repo that is cloned locally. For Instance, E:\LocalSolutionConfigs
-2.	Open the folder Dev Config to view all the list of all the solution configuration files.  
-3.	Select and open the respective solution config file, for instance, Config_RecruitMgmt.xml in Notepad++ 
-4.	Check if **Enterprise Name** and the **Database name** in the given connection string under **<Solution_name_UserDatabase>** is configured for you.
-5.	Copy the path of the solution configuration file. For instance:  E:\LocalSolutionConfigs\solutionconfigs\dev configs
+Administrator should provide user DB connection string that has to be added to it. 
 
-**B. Configurations in File BizAPP.Runtime.Registry.Host.exe.config**
+1.	Open the local **SolutionConfigs** repo, that is cloned locally. For Instance, E:\LocalSolutionConfigs
+2.	Open the dev configs/<respective solution config file>, for instance, dev configs/Config_RecruitMgmt.xml in Notepad++.  
+3.	Check if **Enterprise Name** and the **Database name** in the given connection string under **<respective_Solution_name>_UserDatabase>** is configured for you.
+5.	Copy the path of the solution configuration file. For instance,E:\LocalSolutionConfigs\solutionconfigs\dev configs
+
+**B. Configure - /DevRelease/BizAPP/BizAPP.Runtime.Registry.Host.exe.config**
 
 To set the path of the license server and the service config file:
 
 1.	In the local Build repository, point to BizAPP Folder, for instance, E:\Localrepo\devrelease\BizAPP
 2.	Open the file **BizAPP.Runtime.Registry.Host.exe.config** in NotePad++
-
-
 3.	In the appsettings sections, add path to the license as 
-***
-   <add key="licenseserver" value="13.71.71.190:13333" />`
 
-   <add key="licenseserver" value="13.71.71.190:13333" />
-***
+  ><add key="licenseserver" value="13.71.71.190:13333" />`
+  ><add key="licenseserver" value="13.71.71.190:13333" />
 
 4. The service config file has to point to where your config file is stored as 
 
-***
- <add key="serviceconfigfile" value="E:\LocalSolutionConfigs\solutionconfigs\Config_Recruit.xml" />
-***
-5. Enable the trace logs and file logs to “true” to view and generate the error report.
+><add key="serviceconfigfile" value="E:\LocalSolutionConfigs\solutionconfigs\Config_Recruit.xml" />
 
-***
-<rules>
-<logger name="BizAPP*" minlevel="Debug" writeTo="tracelog" enabled="True" />
-<logger name="BizAPP*" minlevel="Debug" writeTo="filelog" enabled="True" />
-</rules>
-***
+5. Enable the trace logs and file logs to **true** to view and generate the error report.
 
-Now, all the BizAPP configurations are completed. 
+><rules>
+><logger name="BizAPP*" minlevel="Debug" writeTo="tracelog" enabled="True" />
+><logger name="BizAPP*" minlevel="Debug" writeTo="filelog" enabled="True" />
+></rules>
 
-## BizAPP – Shortcut  
- 
-You can easily open and start BizAPP from the desktop, if a shortcut is created or pinned to the taskbar.
+**C. Create a shortcut - /Devrelease/BizAPP/BizAPPModeler.exe 
 
-1.	Open the local build repository and point to BizAPP folder, For instance, E:\Localrepo\devrelease\BizAPP
+6. Create a shortcut for BizAPP nd start BizAPP from the desktop, if a shortcut is created or pinned to the taskbar.
+
+1.	In the local build repository,  and point to BizAPP folder, For instance, E:\Localrepo\devrelease\BizAPP
 2.	Right-click on **BizAPPModeler.exe** file.
 3.	Select **Send To Desktop** and click **Create Shortcut** or Click **Pin to Taskbar**. 
 
-The BizAPP icon will appear on your desktop or will appear as pinned to your taskbar.
+Now, all the BizAPP configurations are completed. The BizAPP icon will appear on your desktop or will appear as pinned to your taskbar.
 
 ## Updating BizAPP Build
 
