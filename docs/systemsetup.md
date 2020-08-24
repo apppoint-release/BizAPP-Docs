@@ -54,9 +54,8 @@ The IIS on windows 10 or server versions has to be set-up and enabled on your sy
 9.  Navigate to *Performance Features* and enable features such as *Dynamic Content Compression and Static Content Compression*.
 10. If you require Windows Integrated Authentication for the web site, it can be enabled in *Security* >> *Windows Authentication*. 
 11.	The installation will take several minutes, once it is completed, click Close.
-12.	To ensure that IIS is installed and working, type IIS in the Search bar near the Start button. You’ll see the Internet Information Services Manager, click Open. OR
-13.	In the Command Prompt, type inetmgr. The IIS Manager window is open onscreen. 
-14.	In the IIS Manager window, click Application Pools, and check if BizAPP Pool services is in the “Started” state.
+12.	To ensure that IIS is installed and working, type IIS in the Search bar near the Start button. You’ll see the Internet Information Services Manager, click Open.
+13.	Alternately, in the Run Prompt, type inetmgr. The IIS Manager window opens when successfully installed.
 
 ### Required Installations
 
