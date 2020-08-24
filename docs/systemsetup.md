@@ -1,60 +1,62 @@
+## System Requirements
 
-## INITIAL SETUP 
-The system should be set-up with required installations, pre-requisite software’s and made ready to install the Modeler.
-
-### System Requirements
-
-| Operating System        | Windows 10                                           |
+| Operating System        | Windows 10, Windows Server 2012 R2 or later          |
 | ----------------------- | -----------------------------------------------------|
-| Microsoft.Net Framework | Download the .NET 4.8 Frame Work RunTime             |
-|                         | https://dotnet.microsoft.com/downloadWindows 10      |
-| Windows PowerShell      | 3.0                                                  |
-| Database                | Microsoft SQL Server 2016 Standard/Enterprise edition|
-|                         | Microsoft SQL Server Express 2008, 2012 edition.     |           
-| Browser                 | Chrome, Mozilla Firefox, IE 10/11, Microsoft Edge 11 |
-| Microsoft Visio         | 2003/2007/latest.                                    |
-| Notepad/Notepad++       | Install the latest version.                          |
+| Microsoft .NET Framework | 4.8 &nbsp;&nbsp;<span style="color:blue">[Download](https://dotnet.microsoft.com/download/dotnet-framework/net48)</span>             |
+| Windows PowerShell      | > 3.0                                                |
+| Database                | Microsoft SQL Server 2012 or later				     |           
+| Browser                 | Chrome, Mozilla Firefox, IE 11 and Microsoft Edge 	 |
+| Microsoft Visio         | 2003/2007/2010                                       |
 
-
-
-## Pre-requisite Setup
+## Pre-requisites Setup
 The following installers need to run for 64/32-bit Operating System.
-1.	Azure AD auth for SQL server
-***
-https://www.microsoft.com/en-us/download/confirmation.aspx?id=48742
-***
+1.	Azure AD auth for SQL server *(Required only if you use Azure AD authentication for SQL Azure)*
+
+	<span style="color:blue">[Microsoft Active Directory Authentication Library for Microsoft SQL Server](https://www.microsoft.com/en-us/download/confirmation.aspx?id=48742)</span>
+
 2.	SMO for x64 (64 bit)
-***
-https://cdn.apppoint.com/bizapp/smo/x64/SharedManagementObjects.msi
-https://cdn.apppoint.com/bizapp/smo/x64/SqlDom.msi
-https://cdn.apppoint.com/bizapp/smo/x64/SQLSysClrTypes.msi
-***
+
+	<span style="color:blue">[Shared Management Objects](https://cdn.apppoint.com/bizapp/smo/x64/SharedManagementObjects.msi)</span>
+
+	<span style="color:blue">[Sql Dom](https://cdn.apppoint.com/bizapp/smo/x64/SqlDom.msi)</span>
+	
+	<span style="color:blue">[Sql CLR Types](https://cdn.apppoint.com/bizapp/smo/x64/SQLSysClrTypes.msi)</span>
+
 3.	SMO for x86 (32 bit)
-***
-https://cdn.apppoint.com/bizapp/smo/x86/SharedManagementObjects.msi
-https://cdn.apppoint.com/bizapp/smo/x86/SqlDom.msi
-https://cdn.apppoint.com/bizapp/smo/x86/SQLSysClrTypes.msi
-***
+
+	<span style="color:blue">[Shared Management Objects](https://cdn.apppoint.com/bizapp/smo/x86SharedManagementObjects.msi)</span>
+
+	<span style="color:blue">[Sql Dom](https://cdn.apppoint.com/bizapp/smo/x86/SqlDom.msi)</span>
+	
+	<span style="color:blue">[Sql CLR Types](https://cdn.apppoint.com/bizapp/smo/x86/SQLSysClrTypes.msi)</span>
+	
 4.	VC++ Redistributable installer for x64 and x86
-***
-https://cdn.apppoint.com/bizapp/vcredist/vcredist_x64.exe
-https://cdn.apppoint.com/bizapp/vcredist/vcredist_x86.exe
-***
+
+	<span style="color:blue">[64 bit VC++ Runtime](https://cdn.apppoint.com/bizapp/vcredist/vcredist_x64.exe)</span>
+
+	<span style="color:blue">[32 bit VC++ Runtime](https://cdn.apppoint.com/bizapp/vcredist/vcredist_x86.exe)</span>
 
 ### IIS Setup
 
-IIS or Internet Information Server is the server used to host the .Net web applications. IIS is normally installed on a Windows Server. The IIS on windows 10 has to be set-up and enabled on your system.
-1.	On the Command prompt, run inetmgr. The IIS Manager window is available on screen.
-2.	If IIS Manager does not open then to enable it on your system, open the Command prompt, go to Control Panel>>Programs>>Programs and Features.
+IIS or Internet Information Server is the server used to host the .Net web applications. IIS is normally installed on a Windows Server. 
+The IIS on windows 10 or server versions has to be set-up and enabled on your system.
+1.	Open Windows Run prompt. Type "inetmgr" and enter. The IIS Manager window will open, if installed.
+2.	If IIS Manager does not open, to enable it on your system, go to Control Panel >> Programs >> Programs and Features.
 3.	In the left panel, select the Turn Windows features on or off.
  
 ! Figure 1: Turn on Windows Features On/Off
 
-4.	In the Turn Windows features on or off, select the checkbox “Internet Information Services Hostable Web Core” and click OK. 
-5.	The installation will take several minutes, once it is completed, click Close.
-6.	To ensure that IIS is installed and working, type IIS in the Search bar near the Start button. You’ll see the Internet Information Services Manager, click Open. OR
-7.	In the Command Prompt, type inetmgr. The IIS Manager window is open onscreen. 
-8.	In the IIS Manager window, click Application Pools, and check if BizAPP Pool services is in the “Started” state.
+4.	In the Turn Windows features on or off, select the checkbox *Internet Information Services Hostable Web Core* and click OK. 
+5.  Enable *Internet Information Services*. Make sure the following items are enabled under this node.
+6.  Expand the node and navigate to "World Wide Web Services* >> *Application Development Features*
+7.  Check the features such as .NET Extensibility, ASP.NET 4.8, ISAPI Filters, Server-side Includes and WebSocket Protocol.
+8.  Navigate to *Common HTTP Features* and enable feeatures such as Default Document, HTTP Errors, HTTP Redirection and Static Content.
+9.  Navigate to *Performance Features* and enable features such as Dynamic Content Compression and Static Content Compression.
+10. If you require Windows Integrated Authentication for the web site, it can be enabled in *Security* >> Windows Authentication. 
+11.	The installation will take several minutes, once it is completed, click Close.
+12.	To ensure that IIS is installed and working, type IIS in the Search bar near the Start button. You’ll see the Internet Information Services Manager, click Open. OR
+13.	In the Command Prompt, type inetmgr. The IIS Manager window is open onscreen. 
+14.	In the IIS Manager window, click Application Pools, and check if BizAPP Pool services is in the “Started” state.
 
 :::NOTE:  The current password of the user has to be added in the BizAPP Pool>>Advanced Settings>>Identity property >>Custom Account>>Set Credentials window. 
  
@@ -158,9 +160,3 @@ Sourcetree is a free Git GUI used for visual representation of repositories. It 
 14.  You may see the Load SSH Key? dialog after installation. Click No, if you don't have one and want to use Sourcetree to create one.
  
 ! Figure 22: Load SSH
-
-
-
-
-
-
