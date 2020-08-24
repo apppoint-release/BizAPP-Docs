@@ -49,9 +49,9 @@ The IIS on windows 10 or server versions has to be set-up and enabled on your sy
 4.	In the Turn Windows features on or off, select the checkbox *Internet Information Services Hostable Web Core* and click OK. 
 5.  Enable *Internet Information Services*. Make sure the following items are enabled under this node.
 6.  Expand the node and navigate to *World Wide Web Services* >> *Application Development Features*
-7.  Check the features such as .NET Extensibility, ASP.NET 4.8, ISAPI Filters, Server-side Includes and WebSocket Protocol.
-8.  Navigate to *Common HTTP Features* and enable feeatures such as Default Document, HTTP Errors, HTTP Redirection and Static Content.
-9.  Navigate to *Performance Features* and enable features such as Dynamic Content Compression and Static Content Compression.
+7.  Enable features such as *.NET Extensibility, ASP.NET 4.8, ISAPI Filters, Server-side Includes and WebSocket Protocol*.
+8.  Navigate to *Common HTTP Features* and enable features such as *Default Document, HTTP Errors, HTTP Redirection and Static Content*.
+9.  Navigate to *Performance Features* and enable features such as *Dynamic Content Compression and Static Content Compression*.
 10. If you require Windows Integrated Authentication for the web site, it can be enabled in *Security* >> *Windows Authentication*. 
 11.	The installation will take several minutes, once it is completed, click Close.
 12.	To ensure that IIS is installed and working, type IIS in the Search bar near the Start button. You’ll see the Internet Information Services Manager, click Open. OR
