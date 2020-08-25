@@ -56,4 +56,4 @@ __To sign-in to bitbucket (using your personal account)__:
 This is an empty solution repository that is created in bitbucket. 
 
 ### Solution Configuration File
-The owner of the Solution Configuration repository or the Administrator will provide access to the respective solution configuration file. The path of this file has to be configured to a config file within the build repository. For more details, refer to: <span style="color:blue">[Configuring Files](]</span>
+The owner of the Solution Configuration repository or the Administrator will provide access to the respective solution configuration file. The path of this file has to be configured to a config file within the build repository. For more details, refer to: <span style="color:blue">[Configuring files](https://apppoint-release.github.io/bizapp-docs/#/installbizapp?id=configuring-local-repository-files)</span>

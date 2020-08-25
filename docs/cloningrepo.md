@@ -1,8 +1,14 @@
-## Cloning Repositories
 The repository in BitBucket or GitHub are remote repositories (either public or private) that can be cloned to create a local copy on your system. 
-Cloning repositories can be done using SSH or using Https (where no authentication of user is required).Cloning can be done using either SourceTree OR BitBucket/GitHub
+Cloning repositories can be done:
+ + Using SSH or
+ + Using Https (where no authentication of user is required)
+ 
+Cloning can be done using either 
++ SourceTree OR 
++ BitBucket/GitHub
 
-## Cloning Build - BitBucket/GitHub
+### Cloning from BitBucket/GitHub
+
 If your account in GitHub or BitBucket has been authenticated (or given access), then the remote repositories will be listed in Sourcetree. 
 __To clone remote repositories from BitBucket or from Sourcetree__:
 1.	Click on the [Release_Build] Open the repository in BitBucket (using the link provided) and click **Clone**. 
