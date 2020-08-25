@@ -5,4 +5,3 @@
  	* [Cloning Repositories](cloningrepo.md)
 * Installation
 	* [Installing Bizapp](installbizapp.md)
-* [Starting Modeler](startmodeler.md)

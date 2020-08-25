@@ -6,7 +6,7 @@
 | Windows PowerShell      | > 3.0                                                |
 | Database                | Microsoft SQL Server 2012 or later				     |           
 | Browser                 | Chrome, Mozilla Firefox, IE 11 and Microsoft Edge 	 |
-| Microsoft Visio         | 2003/2007/2010                                       |
+| Microsoft Visio         | 2003/2007/2010 (trial version) <span style="color:blue">[Download](https://microsoft_visio.en.downloadastro.com/)</span>                                    |
 
 ## Pre-requisites Setup
 The following installers need to run for 64/32-bit Operating System.
@@ -40,37 +40,45 @@ The following installers need to run for 64/32-bit Operating System.
 
 IIS or Internet Information Server is the server used to host the .Net web applications. IIS is normally installed on a Windows Server. 
 The IIS on windows 10 or server versions has to be set-up and enabled on your system.
-1.	Open Windows Run prompt. Type "inetmgr" and enter. The IIS Manager window will open, if installed.
-2.	If IIS Manager does not open, to enable it on your system, go to Control Panel >> Programs >> Programs and Features.
-3.	In the left panel, select the Turn Windows features on or off.
+1.	Open **Windows Run** prompt. Type "inetmgr" and enter. The **IIS Manager window** will open, if installed.
+2.	If **IIS Manager** does not open then to enable it on your system, go to **Control Panel >> Programs >> Programs and Features**.
+3.	In the left panel, select the **Turn Windows features on or off**.
  
 ![windowsfeature](/images/systeminstalls/windowsfeatureonoff.png)
 
-4.	In the Turn Windows features on or off, select the checkbox *Internet Information Services Hostable Web Core* and click OK. 
-5.  Enable *Internet Information Services*. Make sure the following items are enabled under this node.
-6.  Expand the node and navigate to *World Wide Web Services* >> *Application Development Features*
-7.  Enable features such as *.NET Extensibility, ASP.NET 4.8, ISAPI Filters, Server-side Includes and WebSocket Protocol*.
-8.  Navigate to *Common HTTP Features* and enable features such as *Default Document, HTTP Errors, HTTP Redirection and Static Content*.
-9.  Navigate to *Performance Features* and enable features such as *Dynamic Content Compression and Static Content Compression*.
-10. If you require Windows Integrated Authentication for the web site, it can be enabled in *Security* >> *Windows Authentication*. 
-11.	The installation will take several minutes, once it is completed, click Close.
-12.	To ensure that IIS is installed and working, type IIS in the Search bar near the Start button. You’ll see the Internet Information Services Manager, click Open.
-13.	Alternately, in the Run Prompt, type inetmgr. The IIS Manager window opens when successfully installed.
+4.	In the **Turn Windows features on or off**, select the checkbox **Internet Information Services Hostable Web Core**.  
+5.  Enable **Internet Information Services**. Make sure the following items are enabled under this node.
+6.  Expand the node and navigate to **World Wide Web Services >> Application Development Features**
+7.  Enable features such as ***.NET Extensibility, ASP.NET 4.8, ISAPI Filters, Server-side Includes and WebSocket Protocol**.
+
+![windowswwwservices](/images/systeminstalls/windowswwwservices.png)
+
+8.  Navigate to **Common HTTP Features** and enable features such as **Default Document, HTTP Errors, HTTP Redirection and Static Content**.
+
+![windowshttpfeatures](/images/systeminstalls/windowshttpfeatures.png)
+
+9.  Navigate to **Performance Features** and enable features such as **Dynamic Content Compression** and **Static Content Compression**.
+10. If you require Windows Integrated Authentication for the web site, it can be enabled in **Security >> Windows Authentication**. 
+
+![winperformancesecurity](/images/systeminstalls/win_performancesecurity.png)
+
+11.	The installation will take several minutes, once it is completed, click **Close**.
+12.	To ensure that IIS is installed and working, type IIS in the Search bar near the Start button. You’ll see the **Internet Information Services Manager** window, click **Open**.
 
 ### Required Installations
 
-You can clone the repository and install the build using Git Commands OR the Desktop interface of BitBucket (Sourcetree) and GitHub (GitHub Desktop).
+You can clone the repository and install the build using **Git Commands** OR the **Desktop interface** of BitBucket (Sourcetree) and GitHub (GitHub Desktop).
 
-a)	Install **Git Bash**: Use the Git 2.21.0 version and above
-b)	Install **SourceTree 3.3.8**or the latest version (Not a mandatory requirement) 
++ Install **Git Bash**: Use the Git 2.21.0 version and above
++ Install **SourceTree 3.3.8** or the latest version (this is not a mandatory requirement) 
 
 ### Install Git Bash 
 
 Git Bash is a source control management system for Windows. It allows users to type Git commands that make source code management easier through versioning and commit history. Git Bash is not a GUI software; it is a command-line prompt which provides a BASH emulation to run Git from the command line. You can use Git Bash to write and run commands on the terminal and update the build.
 
-1.	Download the latest **Git for Windows Installers** from [git instal llink](https://gitforwindows.org/) 
+1.	Download the latest **Git for Windows Installers** from [git install](https://gitforwindows.org/) 
 2.	Double-click on the **.exe file** to open and execute Git Bash. A **Git Setup Wizard** appears on screen.
-3.	In the Select Destination location, click **Browse**, select the destination location where you want to install Git, and click **Next**.
+3.	In the **Select Destination location**, click **Browse**, select the **destination location** where you want to install Git, and click **Next**.
 
 ![gitdestination](/images/systeminstalls/gitsetup_destination.png)
 
@@ -104,9 +112,9 @@ Git Bash is a source control management system for Windows. It allows users to t
  
 11.	Once completed, you can check the option to **Launch Git Bash** if you want to open a Bash command line or, if you selected the Windows command line, run Git from the Windows command line.
  
- ![gitinstall](/images/systeminstalls/gitsetup_install.png)
+![gitinstall](/images/systeminstalls/gitsetup_install.png)
  
- ![gitcompletewizard](/images/systeminstalls/gitsetup_completewizard.png)
+![gitcompletewizard](/images/systeminstalls/gitsetup_completewizard.png)
   
 12.	Click **Finish** to complete the installation. 
 
@@ -130,13 +138,13 @@ Sourcetree is a free Git GUI used for visual representation of repositories.It p
  
 ![bitbucketreg](/images/systeminstalls/bitbucket_register.png)
 
-8. If Sourcetree is already installed, select the **Notification** flag and update it to the latest available version.
+8. If **Sourcetree** is already installed, select the **Notification** flag and update it to the latest available version.
 
 7. A **Confirm access to your account** window appears on screen. Select the **Read and modify your repositories and their pull requests to enable the Read/Write access** option.
  
 ![bitbucketaccess](/images/systeminstalls/bitbucket_grantaccess.png)
 
-8. Select the **Grant Access** button. This completes the Registration Process.
+8. Select the **Grant Access** button. This completes the **Registration Process**.
  
 ![bitbucketcomplete](/images/systeminstalls/bitbucket_completeregister.png)
 
