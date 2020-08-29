@@ -2,7 +2,7 @@
 
 | Operating System        | Windows 10, Windows Server 2012 R2 or later          |
 | ----------------------- | -----------------------------------------------------|
-| Microsoft .NET Framework | 4.8 &nbsp;&nbsp;<span style="color:blue">[Download](https://dotnet.microsoft.com/download/dotnet-framework/net48)</span>             |
+| Microsoft .NET Framework | 4.8 &nbsp;&nbsp;[Download](https://dotnet.microsoft.com/download/dotnet-framework/net48)             |
 | Windows PowerShell      | > 3.0                                                |
 | Database                | Microsoft SQL Server 2012 or later				     |           
 | Browser                 | Chrome, Mozilla Firefox, IE 11 and Microsoft Edge 	 |
@@ -12,29 +12,29 @@
 The following installers need to run for 64/32-bit Operating System.
 1.	Azure AD auth for SQL server *(Required only if you use Azure AD authentication for SQL Azure)*
 
-	<span style="color:blue">[Microsoft Active Directory Authentication Library for Microsoft SQL Server](https://www.microsoft.com/en-us/download/confirmation.aspx?id=48742)</span>
+	[Microsoft Active Directory Authentication Library for Microsoft SQL Server](https://www.microsoft.com/en-us/download/confirmation.aspx?id=48742)
 
 2.	SMO for x64 (64 bit)
 
-	<span style="color:blue">[Shared Management Objects](https://cdn.apppoint.com/bizapp/smo/x64/SharedManagementObjects.msi)</span>
+	[Shared Management Objects](https://cdn.apppoint.com/bizapp/smo/x64/SharedManagementObjects.msi)
 
-	<span style="color:blue">[Sql Dom](https://cdn.apppoint.com/bizapp/smo/x64/SqlDom.msi)</span>
+	[Sql Dom](https://cdn.apppoint.com/bizapp/smo/x64/SqlDom.msi)
 	
-	<span style="color:blue">[Sql CLR Types](https://cdn.apppoint.com/bizapp/smo/x64/SQLSysClrTypes.msi)</span>
+	[Sql CLR Types](https://cdn.apppoint.com/bizapp/smo/x64/SQLSysClrTypes.msi)
 
 3.	SMO for x86 (32 bit)
 
-	<span style="color:blue">[Shared Management Objects](https://cdn.apppoint.com/bizapp/smo/x86SharedManagementObjects.msi)</span>
+	[Shared Management Objects](https://cdn.apppoint.com/bizapp/smo/x86SharedManagementObjects.msi)
 
-	<span style="color:blue">[Sql Dom](https://cdn.apppoint.com/bizapp/smo/x86/SqlDom.msi)</span>
+	[Sql Dom](https://cdn.apppoint.com/bizapp/smo/x86/SqlDom.msi)
 	
-	<span style="color:blue">[Sql CLR Types](https://cdn.apppoint.com/bizapp/smo/x86/SQLSysClrTypes.msi)</span>
+	[Sql CLR Types](https://cdn.apppoint.com/bizapp/smo/x86/SQLSysClrTypes.msi)
 	
 4.	VC++ Redistributable installer for x64 and x86
 
-	<span style="color:blue">[64 bit VC++ Runtime](https://cdn.apppoint.com/bizapp/vcredist/vcredist_x64.exe)</span>
+	[64 bit VC++ Runtime](https://cdn.apppoint.com/bizapp/vcredist/vcredist_x64.exe)
 
-	<span style="color:blue">[32 bit VC++ Runtime](https://cdn.apppoint.com/bizapp/vcredist/vcredist_x86.exe)</span>
+	[32 bit VC++ Runtime](https://cdn.apppoint.com/bizapp/vcredist/vcredist_x86.exe)
 
 ### IIS Setup
 
@@ -57,18 +57,38 @@ The IIS on windows 10 or server versions has to be set-up and enabled on your sy
 12.	To ensure that IIS is installed and working, type IIS in the Search bar near the Start button. You’ll see the Internet Information Services Manager, click Open.
 13.	Alternately, in the Run Prompt, type inetmgr. The IIS Manager window opens when successfully installed.
 
-### Required Installations
+## Installation Roles
 
-You can clone the repository and install the build using Git Commands OR the Desktop interface of BitBucket (Sourcetree) and GitHub (GitHub Desktop).
+There are multiple ways to install the software for BizAPP Platform. If you are evaluating BizAPP Platform or going through the process of Self training, other software requirements is optional.
+This not only makes further installation steps optimal, but also enables the users quickly to get started with the Platform.
 
-a)	Install **Git Bash**: Use the Git 2.21.0 version and above
-b)	Install **SourceTree 3.3.8**or the latest version (Not a mandatory requirement) 
+* [Self training or Evaluation](#self-training-or-evaluation)
+* [Regular development using the Platform](#regular-development-using-the-platform)
 
-### Install Git Bash 
+### Self training or Evaluation
 
-Git Bash is a source control management system for Windows. It allows users to type Git commands that make source code management easier through versioning and commit history. Git Bash is not a GUI software; it is a command-line prompt which provides a BASH emulation to run Git from the command line. You can use Git Bash to write and run commands on the terminal and update the build.
+Self training or evaluation typically does not require using Git tools to install the software from the public Git repository. Instead it can be downloaded from the site and 
+manually installed.
 
-1.	Download the latest **Git for Windows Installers** from [git instal llink](https://gitforwindows.org/) 
+To download the build repository as zip file, navigate to the [link](https://github.com/apppoint-release/BizAPP-Public) in any browser
+and click on *Code >> Download ZIP*.
+
+![bitbucketreg](/images/bizapppublic/DownloadRepoZip.png)
+
+Refer to [Installing BizAPP](installbizapp.md) for further instructions.
+
+### Regular development using the Platform
+
+Development activities require Git tools to be installed on the machine to receive future updates on the Platform. 
+You can either clone the repository and setup build using Git Commands or the Desktop interface of BitBucket (Sourcetree)/GitHub (GitHub Desktop).
+
+#### Install Git Bash 
+
+Git Bash is a source control management system for Windows. It allows users to type Git commands that make source code management easier through versioning and commit history. 
+Git Bash is not a GUI software; it is a command-line prompt which provides a BASH emulation to run Git from the command line. 
+You can use Git Bash to write and run commands on the terminal and update the build.
+
+1.	Download the latest **Git for Windows Installers** from [link](https://gitforwindows.org/) 
 2.	Double-click on the **.exe file** to open and execute Git Bash. A **Git Setup Wizard** appears on screen.
 3.	In the Select Destination location, click **Browse**, select the destination location where you want to install Git, and click **Next**.
 
@@ -114,49 +134,17 @@ Git Bash is a source control management system for Windows. It allows users to t
 
 13.	Run the git commands to initialize, configure Git username and Email.  
 
-The Git cheatsheet with basic commands is available in the link : https://education.github.com/git-cheat-sheet-education.pdf. 
+The Git cheatsheet with basic commands is available in the [link](https://education.github.com/git-cheat-sheet-education.pdf). 
 
-### Install Sourcetree 
+#### Install GitHub Desktop (Optional)
 
-Sourcetree is a free Git GUI used for visual representation of repositories.It provides you with an interface that gives you the same capabilities you have with Git without the need to use the command line. It simplifies how you interact with your Git repositories so you can focus on coding.
+GitHub Desktop is a tool that allows you to interact with GitHub from the desktop. With this new application, you can work easier without having to depend on your browser. 
 
-1. Open the [sourcetreeinstalllink](https://www.sourcetreeapp.com/). The **Home page** of Sourcetree is open on screen.
-2. Click the **Download Free** button, or Click **Download for Windows**. The software gets downloaded to your system.
-3. Double-click or Run the **.exe** file. This begins the installation process, click **Install**.
-4. In the **Agreement of Terms and Conditions** form, select the checkbox **I agree to the Atlassian Customer Agreement.** and click **Continue.**
-5. You need an Atlassian account to use Sourcetree. When you get to this screen, click **Use an Existing account**, enter your account ID to open Sourcetree.
-6. If you are creating a new account, select **Sign-in** and add your credentials. or You can signin using your **Google** or **Windows** account.
-7. A one-time registration is required to start using your Bitbucket account and connect to your accounts in GitHub, GitBash. In the **Registration** window, select **Bitbucket.**
- 
-![bitbucketreg](/images/systeminstalls/bitbucket_register.png)
+1. Open the [link](https://desktop.github.com/). Click the **Download for Windows (64Bit)** button.
+2. After successful download, Run the **GitHubDesktopSetup.exe** file. This begins the installation process.
+3. GitHub Desktop opens automatically after installation. It prompts for Sign in steps. Click on **Skip this step**.
+4. In **Configure Git** page, fill in the *Name* and *Email* fields and click on **Continue**.
 
-8. If Sourcetree is already installed, select the **Notification** flag and update it to the latest available version.
+![githubconfigure](/images/github/configure.png)
 
-7. A **Confirm access to your account** window appears on screen. Select the **Read and modify your repositories and their pull requests to enable the Read/Write access** option.
- 
-![bitbucketaccess](/images/systeminstalls/bitbucket_grantaccess.png)
-
-8. Select the **Grant Access** button. This completes the Registration Process.
- 
-![bitbucketcomplete](/images/systeminstalls/bitbucket_completeregister.png)
-
-9. Click **Next** to proceed to the next step,**Installing the Tools**.
- 
-![sourceversioncontrol](/images/systeminstalls/sourcetree_versioncontrol.png)
-
-10. The **Version control systems** gets downloaded to your system.
- 
-![sourcetreemercurial](/images/systeminstalls/sourcetree_mercurial.png)
-
-11. The **installation of the tool** will be completed after the Mercurial files extraction. 
- 
-![sourcecompleteinstall](/images/systeminstalls/sourcetree_completeinstall.png)
-
-12. On completing the installation, click **Next** to view the **Preferences** window.
-13. Select the **Set the global author details for Git and Mercurial**. A **Load SSH key?** prompt window appears on screen.  
-  
-![addpreferences](/images/systeminstalls/sourcetree_prefernces.jpg)
-
-14. You may see the **Load SSH Key?** dialog after installation. Click **No**, if you don't have one and want to use Sourcetree to create one.
- 
-![loadssh](/images/systeminstalls/loadssh.png)
+5. Refer to [Release Build Public](bizapppublic.md) for further instructions on cloning the repository.

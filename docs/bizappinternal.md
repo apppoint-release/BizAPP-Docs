@@ -1,25 +1,58 @@
+## Install Sourcetree (Optional)
+
+Sourcetree is a free Git GUI used for visual representation of repositories.It provides you with an interface that gives you the same capabilities you have with Git without the need to use the command line. It simplifies how you interact with your Git repositories so you can focus on coding.
+
+1. Open the [link](https://www.sourcetreeapp.com/). The **Home page** of Sourcetree is open on screen.
+2. Click the **Download Free** button, or Click **Download for Windows**. The software gets downloaded to your system.
+3. Double-click or Run the **.exe** file. This begins the installation process, click **Install**.
+4. In the **Agreement of Terms and Conditions** form, select the checkbox **I agree to the Atlassian Customer Agreement.** and click **Continue.**
+5. You need an Atlassian account to use Sourcetree. When you get to this screen, click **Use an Existing account**, enter your account ID to open Sourcetree.
+6. If you are creating a new account, select **Sign-in** and add your credentials. or You can signin using your **Google** or **Windows** account.
+7. A one-time registration is required to start using your Bitbucket account and connect to your accounts in GitHub, GitBash. In the **Registration** window, select **Bitbucket.**
+ 
+![bitbucketreg](/images/systeminstalls/bitbucket_register.png)
+
+8. If Sourcetree is already installed, select the **Notification** flag and update it to the latest available version.
+
+7. A **Confirm access to your account** window appears on screen. Select the **Read and modify your repositories and their pull requests to enable the Read/Write access** option.
+ 
+![bitbucketaccess](/images/systeminstalls/bitbucket_grantaccess.png)
+
+8. Select the **Grant Access** button. This completes the Registration Process.
+ 
+![bitbucketcomplete](/images/systeminstalls/bitbucket_completeregister.png)
+
+9. Click **Next** to proceed to the next step,**Installing the Tools**.
+ 
+![sourceversioncontrol](/images/systeminstalls/sourcetree_versioncontrol.png)
+
+10. The **Version control systems** gets downloaded to your system.
+ 
+![sourcetreemercurial](/images/systeminstalls/sourcetree_mercurial.png)
+
+11. The **installation of the tool** will be completed after the Mercurial files extraction. 
+ 
+![sourcecompleteinstall](/images/systeminstalls/sourcetree_completeinstall.png)
+
+12. On completing the installation, click **Next** to view the **Preferences** window.
+13. Select the **Set the global author details for Git and Mercurial**. A **Load SSH key?** prompt window appears on screen.  
+  
+![addpreferences](/images/systeminstalls/sourcetree_prefernces.jpg)
+
+14. You may see the **Load SSH Key?** dialog after installation. Click **No**, if you don't have one and want to use Sourcetree to create one.
+ 
+![loadssh](/images/systeminstalls/loadssh.png)
 
 In this section, you will learn to setup BizAPP and its environment for internal users and developers.
 
 
 ## Accessing Bitbucket Repositories
-The BizAPP Dev build repository Dev release is available in Bitbucket in the link provided below.
-https://bitbucket.org/apppoint/devrelease/src/master/
+The BizAPP Dev build repository **DevRelease** is available in Bitbucket [link](https://bitbucket.org/apppoint/devrelease/src/master/). This document assumes that you have necessary permissions to access the repository.
 
-### Signing into Bitbucket
-Bitbucket is a system for hosting version control repositories. Before, you use Bitbucket, you have to create an account. You can use the standard sign up or you can create one through Open ID (using an existing Google or Yahoo account). 
-To use the standard Bitbucket sign-up:  
-1.	In any Browser, open the link  https://bitbucket.org
-2.	Select Sign-Up for an account. A Create your account for new Sign-up window appears on screen.
-3.	Enter a unique User Name (it can contain numbers, letters, and underscore characters up to 30). Bitbucket appends this username to the URL for all the repositories you create.
-4.	Provide an Email address that is unique across the Bitbucket site. The system will send you a confirmation email.
-5.	Type in a Password and ensure that your password is sufficiently complex and meets the security standards. 
+>**Note:** On your avatar, check if you have permissions to (Read access) to the BizAPP Build repository. This is required to pull latest updates from the build. 
+Otherwise, request administrator for access.
 
-A new account is created in Bitbucket. You can use this Email ID to login into Bitbucket to view remote repositories.
-
-NOTE: On your avatar, check if you have permissions to (Read/Write access) to the BizAPP Build repository. This is required to pull latest updates from the build. Otherwise, permission has to be given by the Owner of the remote repository.
-
-###SSH Authentication
+### SSH Authentication
 
 SSH authentication is required for repositories that are private. When you set up SSH, you create a key pair that contains a private key (saved to your local computer) and a public key (uploaded to Bitbucket). Bitbucket uses the key pair to authenticate anything the associated account can access.  To access repositories in BitBucket that are Private, the following settings are required.
 a)	The owner of the repository has to provide a Read, Write access. 

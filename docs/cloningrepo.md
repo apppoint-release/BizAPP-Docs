@@ -1,16 +1,18 @@
-The repository in BitBucket or GitHub are remote repositories which are configured as either public or private. Both Public and Private repositories can be cloned to create a local copy on your system. Cloning a repository syncs it to your local machine. Both the locations have to be synchronized to add, edit files and then push and pull updates. Public repositories can be cloned using Https where no authentication of user is required. 
-From Source tree, you can view all the remote repositories of BitBucket/GitHub that are set as “Public” or “Private” and for which Read/Write access is given. Cloning can be done using either SourceTree OR BitBucket/GitHub
+The repository in BitBucket is a remote repository which is configured as private. Both Public and Private repositories can be cloned to create a local copy on your system. 
+Cloning a repository syncs it to your local machine. Both the locations have to be synchronized to add, edit files and then push and pull updates. 
+Public repositories can be cloned using HTTPS where no authentication mechanism is required. 
 
+From Source tree, you can view all the remote repositories of BitBucket that are set as “Public” or “Private” and for which Read/Write access is given. Cloning can be done using either SourceTree OR BitBucket/GitHub
 
-## Cloning Build - BitBucket/GitHub
-If your account in GitHub or BitBucket has been authenticated (or given access), then the remote repositories will be listed in Sourcetree. 
+## Cloning Build - BitBucket
+If your account in  BitBucket has been authenticated (or given access), then the remote repositories will be listed in Sourcetree.
 To clone remote repositories from BitBucket or from Sourcetree:
 1.	Open the repository in BitBucket (using the link provided) and click Clone. 
-2.	In the Clone this repository window, select HTTPS and click Clone in Sourcetree. OR
+2.	In the Clone this repository window, select HTTPS and click Clone in Sourcetree.
  
  ![cloneinbitbucket](/images/clonerepo/clonebitbucket.png)
 
-3.	Open Sourcetree.  Select File>>Clone/New, and Click Remote.  The Sourcetree opens in a new window. 
+3.	Open Sourcetree.  Select **File >> Clone**, and Click Remote.  The Sourcetree opens in a new window. 
 
 ### Cloning from Sourcetree
 The Remote tab shows list of all the remote repositories available for the current user. 
@@ -18,9 +20,9 @@ The Remote tab shows list of all the remote repositories available for the curre
 
 ![cloneinsourcetree](/images/clonerepo/clonesourcetree.png)
  
-2.	Select the repository, for instance, the Deverelease build from the list and click Clone. The Clone tab (with clone repository path) is available.  OR
-3.	If cloning is done from Bitbucket, copy-paste the clone path into the text box specified to add the Source path. For instance, clone path for Deverelease   git@bitbucket.org:apppoint/devrelease.git is copied to the Source text box.
-4.	Add Destination path of your local repository, for instance F:\LocaRepo\DeveRelease and click Clone. Cloning is allowed only if it is git repository.
+2.	Select the repository, for instance, the DevRelease build from the list and click Clone. The Clone tab (with clone repository path) is available.
+3.	If cloning is done from Bitbucket, copy-paste the clone path into the text box specified to add the Source path.
+4.	Add Destination path of your local repository, for instance F:\LocaRepo\DeveRelease and click Clone.
 5.	If you are unable to clone, then scroll-down to the Taskbar, click and open PuTTYGen Authentication Agent and add the PrivateKey.
 6.	In Sourcetree, go to Tools>>Launch SSH Agent to launch SSH key for authentication.
  

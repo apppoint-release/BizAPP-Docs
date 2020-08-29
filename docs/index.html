@@ -9,6 +9,12 @@
   <!-- docsify-themeable styles-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css" title="light">
   <link rel="stylesheet alternative" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css" title="dark">
+	<style>
+	:root {
+		--link-color: blue;
+		--base-font-size: 15px;
+	}
+	</style>
 </head>
 <body>
   <div id="app"></div>
@@ -16,10 +22,12 @@
 window.$docsify = {
       name: 'BizAPP',
       repo: '',
+	  homepage: 'systemsetup.md',
+	  logo:'http://apppoint.com/storage/app/media/images/img/logospp.png',
 	  loadNavbar: false,
 	  loadSidebar: true,
 	  subMaxLevel: 4,
-	  coverpage: true,
+	  coverpage: false,
 	  search: 'true',
 	  auto2top: true,
 	  pagination: {
@@ -32,7 +40,7 @@ window.$docsify = {
       copy: '<span>&copy; 2020</span>',
       auth: 'AppPoint Software Solutions',
       pre: '<hr/>',
-      style: 'text-align: right;',
+      style: 'text-align: left;'
 	  },
     }
  </script>
