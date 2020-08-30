@@ -5,5 +5,5 @@
 		* [Setup Sourcetree](bizappinternal.md)
 		* [Cloning Private Repositories](cloningrepo.md)
 * Installation
-	* [Installing BizAPP](installbizapp.md)
+	* [Installing BizAPP](InstallBizAPP.md)
 	* [Starting Modeler](startmodeler.md)
