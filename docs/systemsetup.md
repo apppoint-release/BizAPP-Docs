@@ -40,14 +40,12 @@ The following installers need to run for 64/32-bit Operating System.
 
 IIS or Internet Information Server is the server used to host the .Net web applications. IIS is normally installed on a Windows Server. 
 The IIS on windows 10 or server versions has to be set-up and enabled on your system.
-1.	Open Windows Run prompt. Type "inetmgr" and enter. The IIS Manager window will open, if installed.
-2.	If IIS Manager does not open, to enable it on your system, go to Control Panel >> Programs >> Programs and Features.
-3.	In the left panel, select the Turn Windows features on or off.
- 
-![windowsfeature](/images/systeminstalls/windowsfeatureonoff.png)
-
+1.	Open **Windows** Run prompt. Type **inetmgr** and enter. The **IIS Manager** window will open, if installed.
+2.	If IIS Manager does not open, to enable it on your system, go to **Control Panel >> Programs >> Programs and Features**.
+3.	In the left panel, select the **Turn Windows features on or off**.
 4.	In the Turn Windows features on or off, select the checkbox *Internet Information Services Hostable Web Core* and click OK. 
 5.  Enable *Internet Information Services*. Make sure the following items are enabled under this node.
+![windowsfeature](/images/systeminstalls/windowsfeatureonoff.png)
 6.  Expand the node and navigate to *World Wide Web Services* >> *Application Development Features*
 7.  Enable features such as *.NET Extensibility, ASP.NET 4.8, ISAPI Filters, Server-side Includes and WebSocket Protocol*.
 8.  Navigate to *Common HTTP Features* and enable features such as *Default Document, HTTP Errors, HTTP Redirection and Static Content*.

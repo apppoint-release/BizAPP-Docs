@@ -6,4 +6,3 @@
 		* [Cloning Private Repositories](cloningrepo.md)
 * Installation
 	* [Installing BizAPP](InstallBizAPP.md)
-	* [Starting Modeler](startmodeler.md)
