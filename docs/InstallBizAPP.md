@@ -42,7 +42,7 @@ Set-executionpolicy unrestricted
 
 ![install_ngen](/images/installbizapp/install_ngen.png)
 
-After BizAPP is installed, configurations need to be completed in order for the BizAPP services to work.
+After BizAPP is installed, configurations are done for BizAPP services to work.
 
 ## BizAPP Services
 
