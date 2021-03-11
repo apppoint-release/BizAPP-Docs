@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.apppoint.com/2016/1/ServiceConfiguration">
+	<Enterprises>		
+		<Enterprise Name="SOBaseUser" ID="331f92bd-65db-4490-b965-81ca4df37929" ModelerID="" LicenseID="169f54ed-a622-4863-9270-a6a20bb6654d" Type="15" Enabled="True" />
+	</Enterprises>
+	<Hosts>
+		<Host Name="%COMPUTERNAME%" ID="0a3ef66e-e70c-465b-89fc-4663d219ae82" />
+	</Hosts>
+	<ConfigSections>
+		<ConfigSection Name="Messaging">
+			<NameValues>
+				<NameValuePair>
+					<Name>ConnectionString</Name>
+					<Value>Host=.</Value>
+				</NameValuePair>
+				<NameValuePair>
+					<Name>MessagingFactoryType</Name>
+					<Value>MSMQ</Value>
+				</NameValuePair>
+			</NameValues>
+		</ConfigSection>
+		<ConfigSection Name="push">
+			<NameValues>
+				<NameValuePair>
+					<Name>HubUrl</Name>
+					<Value>http://localhost/bizapp</Value>
+				</NameValuePair>
+				<NameValuePair>
+					<Name>BackPlaneUrl</Name>
+					<Value>localhost:9035</Value>
+				</NameValuePair>
+			</NameValues>
+		</ConfigSection>
+		<ConfigSection Name="json">
+			<NameValues>
+				<NameValuePair>
+					<Name>RootFolder</Name>
+					<Value>E:\temp\JsonStore</Value>
+				</NameValuePair>
+			</NameValues>
+		</ConfigSection>
+	</ConfigSections>
+	<Services>
+		<Service Name="_Authentication" ID="64b6bb1f-b617-45cd-8f6d-afd579497350" EnterpriseID="" Role="Authentication" HostID="0a3ef66e-e70c-465b-89fc-4663d219ae82" DependentService="" IsOutofProc="True" Is32Bit="False" IsEnterpriseIndependent="True" />
+		<Service Name="SOBase_User_Session" ID="467ba38f-e269-44a0-9004-ee6e706c1cc6" EnterpriseID="331f92bd-65db-4490-b965-81ca4df37929" Role="Session" HostID="0a3ef66e-e70c-465b-89fc-4663d219ae82" DependentService="b5cc7ca0-031b-4871-89f8-78f374fe9544" IsOutofProc="False" Is32Bit="False" IsEnterpriseIndependent="False">
+			<NameValues>
+				<NameValuePair>
+					<Name>BasePort</Name>
+					<Value>18145</Value>
+				</NameValuePair>
+			</NameValues>
+			<ConfigSections>
+				<ConfigSection Name="push">
+					<NameValues>
+						<NameValuePair>
+							<Name>HubUrl</Name>
+							<Value>http://localhost/bizapp</Value>
+						</NameValuePair>
+						<NameValuePair>
+							<Name>BackPlaneUrl</Name>
+							<Value>localhost:9035</Value>
+						</NameValuePair>
+					</NameValues>
+				</ConfigSection>
+				<ConfigSection Name="cachemanagers">
+					<NameValues>
+						<NameValuePair>
+							<Name>CacheProvider</Name>
+							<Value>RedisSS</Value>
+						</NameValuePair>
+						<NameValuePair>
+							<Name>Servers</Name>
+							<Value>127.0.0.1:9036</Value>
+						</NameValuePair>
+					</NameValues>
+				</ConfigSection>
+				<ConfigSection Name="objectmanagers">
+					<NameValues>
+						<NameValuePair>
+							<Name>CacheProvider</Name>
+							<Value>RedisSS</Value>
+						</NameValuePair>
+						<NameValuePair>
+							<Name>Servers</Name>
+							<Value>127.0.0.1:9035</Value>
+						</NameValuePair>
+					</NameValues>
+				</ConfigSection>
+			</ConfigSections>
+		</Service>
+		<Service Name="SOBase_User_Database" ID="b5cc7ca0-031b-4871-89f8-78f374fe9544" EnterpriseID="331f92bd-65db-4490-b965-81ca4df37929" Role="Database" HostID="0a3ef66e-e70c-465b-89fc-4663d219ae82" DependentService="" IsOutofProc="False" Is32Bit="False" IsEnterpriseIndependent="False">
+			<ConfigSections>
+				<ConfigSection Name="dbinfo">
+					<NameValues>
+						<NameValuePair>
+							<Name>DbType</Name>
+							<Value>0</Value>
+						</NameValuePair>
+						<NameValuePair>
+							<Name>ConnectionString</Name>
+							<Value>Data Source=localhost; Initial Catalog=SOUser_Base; Integrated Security=SSPI;Connection Timeout=600;</Value>
+						</NameValuePair>
+					</NameValues>
+				</ConfigSection>
+			</ConfigSections>
+		</Service>
+		<Service Name="SOBase_User_ExternalDataSource" ID="52452ae4-7ff7-458e-aa88-72bc4019decd" EnterpriseID="331f92bd-65db-4490-b965-81ca4df37929" Role="ExternalDataSource" HostID="0a3ef66e-e70c-465b-89fc-4663d219ae82" DependentService="" IsOutofProc="True" Is32Bit="False" IsEnterpriseIndependent="False">
+			<NameValues>
+				<NameValuePair>
+					<Name>BasePort</Name>
+					<Value>14736</Value>
+				</NameValuePair>
+			</NameValues>
+			<ConfigSections>
+				<ConfigSection Name="providers">
+					<NameValues>
+						<NameValuePair>
+							<Name>SalesForce</Name>
+							<Value>BizAPP.ExternalDataSource.SalesForce.Provider, BizAPP.ExternalDataSource.SalesForce, Version=1.1.0.2, Culture=neutral, PublicKeyToken=bc1aabc9722d6b0e</Value>
+						</NameValuePair>
+						<NameValuePair>
+							<Name>ClearQuest</Name>
+							<Value>BizAPP.ExternalDataSource.CQ.Provider, BizAPP.ExternalDataSource.CQ, Version=1.1.0.2, Culture=neutral, PublicKeyToken=bc1aabc9722d6b0e</Value>
+						</NameValuePair>
+						<NameValuePair>
+							<Name>NTLM</Name>
+							<Value>BizAPP.ExternalDataSource.NTLM.Provider, BizAPP.ExternalDataSource.NTLM, Version=1.1.0.2, Culture=neutral, PublicKeyToken=bc1aabc9722d6b0e</Value>
+						</NameValuePair>
+						<NameValuePair>
+							<Name>EPM</Name>
+							<Value>BizAPP.ExternalDataSource.EPM.Provider, BizAPP.ExternalDataSource.EPM, Version=1.1.0.2, Culture=neutral, PublicKeyToken=bc1aabc9722d6b0e</Value>
+						</NameValuePair>
+						<NameValuePair>
+							<Name>OleDb</Name>
+							<Value>BizAPP.ExternalDataSource.OleDb.Provider, BizAPP.ExternalDataSource.OleDb, Version=1.1.0.2, Culture=neutral, PublicKeyToken=bc1aabc9722d6b0e</Value>
+						</NameValuePair>
+						<NameValuePair>
+							<Name>Odbc</Name>
+							<Value>BizAPP.ExternalDataSource.Odbc.Provider, BizAPP.ExternalDataSource.Odbc, Version=1.1.0.2, Culture=neutral, PublicKeyToken=bc1aabc9722d6b0e</Value>
+						</NameValuePair>
+						<NameValuePair>
+							<Name>Oracle</Name>
+							<Value>BizAPP.ExternalDataSource.Oracle.Provider, BizAPP.ExternalDataSource.Oracle, Version=1.1.0.1, Culture=neutral, PublicKeyToken=bc1aabc9722d6b0e</Value>
+						</NameValuePair>
+						<NameValuePair>
+							<Name>Excel</Name>
+							<Value>BizAPP.ExternalDataSource.Excel.Provider, BizAPP.ExternalDataSource.Excel, Version=1.1.0.2, Culture=neutral, PublicKeyToken=bc1aabc9722d6b0e</Value>
+						</NameValuePair>
+						<NameValuePair>
+							<Name>Azure</Name>
+							<Value>BizAPP.ExternalDataSource.Azure.Provider, BizAPP.ExternalDataSource.Azure, Version=1.1.0.1, Culture=neutral, PublicKeyToken=bc1aabc9722d6b0e</Value>
+						</NameValuePair>
+						<NameValuePair>
+							<Name>VSTS</Name>
+							<Value>BizAPP.ExternalDataSource.VSTS.Provider, BizAPP.ExternalDataSource.VSTS, Version=1.1.0.2, Culture=neutral, PublicKeyToken=bc1aabc9722d6b0e</Value>
+						</NameValuePair>
+						<NameValuePair>
+							<Name>SharePoint</Name>
+							<Value>BizAPP.ExternalDataSource.SharePoint.Provider, BizAPP.ExternalDataSource.SharePoint, Version=1.1.0.2, Culture=neutral, PublicKeyToken=bc1aabc9722d6b0e</Value>
+						</NameValuePair>
+						<NameValuePair>
+							<Name>Siebel</Name>
+							<Value>BizAPP.ExternalDataSource.Siebel.Provider, BizAPP.ExternalDataSource.Siebel, Version=1.1.0.2, Culture=neutral, PublicKeyToken=bc1aabc9722d6b0e</Value>
+						</NameValuePair>
+						<NameValuePair>
+							<Name>MsSql</Name>
+							<Value>BizAPP.ExternalDataSource.MsSql.Provider, BizAPP.ExternalDataSource.MsSql, Version=1.1.0.2, Culture=neutral, PublicKeyToken=bc1aabc9722d6b0e</Value>
+						</NameValuePair>
+						<NameValuePair>
+							<Name>MySql</Name>
+							<Value>BizAPP.ExternalDataSource.MySql.Provider, BizAPP.ExternalDataSource.MySql, Version=1.1.0.2, Culture=neutral, PublicKeyToken=bc1aabc9722d6b0e</Value>
+						</NameValuePair>
+						<NameValuePair>
+							<Name>Axapta</Name>
+							<Value>BizAPP.ExternalDataSource.Axapta.Provider, BizAPP.ExternalDataSource.Axapta, Version=1.1.0.2, Culture=neutral, PublicKeyToken=bc1aabc9722d6b0e</Value>
+						</NameValuePair>
+					</NameValues>
+				</ConfigSection>
+			</ConfigSections>
+		</Service>
+		<Service Name="SystemObjects_User_Notification" ID="0d0ede66-4d02-4c77-8fc8-846355b7cdf5" EnterpriseID="" Role="Notification" HostID="0a3ef66e-e70c-465b-89fc-4663d219ae82" DependentService="" IsOutofProc="True" Is32Bit="False" IsEnterpriseIndependent="False">
+			<NameValues>
+				<NameValuePair>
+					<Name>BasePort</Name>
+					<Value>48910</Value>
+				</NameValuePair>
+			</NameValues>
+			<ConfigSections>
+				<ConfigSection Name="Messaging">
+					<NameValues>
+						<NameValuePair>
+							<Name>ConnectionString</Name>
+							<Value>Host=.</Value>
+						</NameValuePair>
+						<NameValuePair>
+							<Name>MessagingFactoryType</Name>
+							<Value>MSMQ</Value>
+						</NameValuePair>
+						<NameValuePair>
+							<Name>QueueName</Name>
+							<Value>Notification</Value>
+						</NameValuePair>
+					</NameValues>
+				</ConfigSection>
+			</ConfigSections>
+		</Service>
+		<Service Name="SO_SMSSender" ID="cb2334db-2caf-453c-86fd-37b487f91a91" EnterpriseID="331f92bd-65db-4490-b965-81ca4df37929" Role="SMSSender" HostID="0a3ef66e-e70c-465b-89fc-4663d219ae82" DependentService="" IsOutofProc="True" Is32Bit="False" IsEnterpriseIndependent="False">
+			<NameValues>
+				<NameValuePair>
+					<Name>BasePort</Name>
+					<Value>27788</Value>
+				</NameValuePair>
+				<NameValuePair>
+					<Name>AssemblyQualifiedName</Name>
+					<Value>BizAPP.Runtime.Core.Framework.Service.SMS.Send.SMSSendEngineService, BizAPP.Runtime.Core.Framework, Version=1.1.0.1, Culture=neutral, PublicKeyToken=5cd91901593ba07f</Value>
+				</NameValuePair>
+				<NameValuePair>
+					<Name>MinPooledProcesses</Name>
+					<Value>1</Value>
+				</NameValuePair>
+				<NameValuePair>
+					<Name>MaxPooledProcesses</Name>
+					<Value>1</Value>
+				</NameValuePair>
+				<NameValuePair>
+					<Name>DefaultSMSSendProvider</Name>
+					<Value>SMSCountry</Value>
+				</NameValuePair>
+			</NameValues>
+			<ConfigSections>
+				<ConfigSection Name="SMSCountry">
+					<NameValues>
+						<NameValuePair>
+							<Name>Username</Name>
+							<Value>apppoint</Value>
+						</NameValuePair>
+						<NameValuePair>
+							<Name>Password</Name>
+							<Value>a3p-blr2015</Value>
+						</NameValuePair>
+						<NameValuePair>
+							<Name>SenderId</Name>
+							<Value>apppoint</Value>
+						</NameValuePair>
+					</NameValues>
+				</ConfigSection>
+				<ConfigSection Name="Way2Mint">
+					<NameValues>
+						<NameValuePair>
+							<Name>Username</Name>
+							<Value>DefaultWay2Mintusername</Value>
+						</NameValuePair>
+						<NameValuePair>
+							<Name>Password</Name>
+							<Value>DefaultWay2Mintpassword</Value>
+						</NameValuePair>
+						<NameValuePair>
+							<Name>SenderId</Name>
+							<Value>DefaultWay2Mintsenderid</Value>
+						</NameValuePair>
+					</NameValues>
+				</ConfigSection>
+			</ConfigSections>
+		</Service>
+		<Service Name="JObService" ID="c762c73a-cb32-4faf-8f0d-0cfb2acfc1a9" EnterpriseID="331f92bd-65db-4490-b965-81ca4df37929" Role="JobService" HostID="0a3ef66e-e70c-465b-89fc-4663d219ae82" DependentService="" IsOutofProc="True" Is32Bit="False" IsEnterpriseIndependent="False">
+			<NameValues>
+				<NameValuePair>
+					<Name>BasePort</Name>
+					<Value>11090</Value>
+				</NameValuePair>
+			</NameValues>
+			<ConfigSections>
+				<ConfigSection Name="Messaging">
+					<NameValues>
+						<NameValuePair>
+							<Name>ConnectionString</Name>
+							<Value>Host=.</Value>
+						</NameValuePair>
+						<NameValuePair>
+							<Name>MessagingFactoryType</Name>
+							<Value>MSMQ</Value>
+						</NameValuePair>
+						<NameValuePair>
+							<Name>QueueName</Name>
+							<Value>jobservice</Value>
+						</NameValuePair>
+					</NameValues>
+				</ConfigSection>
+			</ConfigSections>
+		</Service>
+		<Service Name="SOBase_User_Event" ID="9580933c-2f29-4506-9ae0-8afb4ec3eec2" EnterpriseID="331f92bd-65db-4490-b965-81ca4df37929" Role="Event" HostID="0a3ef66e-e70c-465b-89fc-4663d219ae82" DependentService="" IsOutofProc="True" Is32Bit="False" IsEnterpriseIndependent="False">
+			<NameValues>
+				<NameValuePair>
+					<Name>BasePort</Name>
+					<Value>17258</Value>
+				</NameValuePair>
+				<NameValuePair>
+					<Name>AssemblyQualifiedName</Name>
+					<Value>BizAPP.Runtime.Core.Service.Event.EventService, BizAPP.Runtime.Core.Framework.Event, Version=1.1.0.37, Culture=neutral, PublicKeyToken=5cd91901593ba07f</Value>
+				</NameValuePair>
+				<NameValuePair>
+					<Name>MinPooledProcesses</Name>
+					<Value>1</Value>
+				</NameValuePair>
+				<NameValuePair>
+					<Name>MaxPooledProcesses</Name>
+					<Value>1</Value>
+				</NameValuePair>
+				<NameValuePair>
+					<Name>HubUrl</Name>
+					<Value>http://localhost/bizapp</Value>
+				</NameValuePair>
+				<NameValuePair>
+					<Name>BackPlaneUrl</Name>
+					<Value>localhost:9035</Value>
+				</NameValuePair>
+			</NameValues>
+		</Service>
+
+		<Service Name="SOBase_User_WebHook" ID="30fdaec7-1128-fafa-8699-a0c28ba334cb"
+			EnterpriseID="331f92bd-65db-4490-b965-81ca4df37929" Role="WebHook"
+			HostID="0a3ef66e-e70c-465b-89fc-4663d219ae82" DependentService="" IsOutofProc="True" Is32Bit="False" IsEnterpriseIndependent="False">
+			<NameValues>
+				<NameValuePair>
+					<Name>BasePort</Name>
+					<Value>57871</Value>
+				</NameValuePair>
+				<NameValuePair>
+					<Name>AssemblyQualifiedName</Name>
+					<Value>BizAPP.Runtime.Core.Service.WebHooks.WebHookService, BizAPP.Runtime.Core.Framework.WebHook, Version=1.1.0.37, Culture=neutral, PublicKeyToken=5cd91901593ba07f</Value>
+				</NameValuePair>
+				<NameValuePair>
+					<Name>MinPooledProcesses</Name>
+					<Value>1</Value>
+				</NameValuePair>
+				<NameValuePair>
+					<Name>MaxPooledProcesses</Name>
+					<Value>1</Value>
+				</NameValuePair>
+				<NameValuePair>
+					<Name>HubUrl</Name>
+					<Value>http://localhost/bizapp</Value>
+				</NameValuePair>
+				<NameValuePair>
+					<Name>BackPlaneUrl</Name>
+					<Value>localhost:9035</Value>
+				</NameValuePair>
+			</NameValues>
+		</Service>
+
+		<Service Name="SOBase_User_ServiceOrder" ID="30fdaec7-1128-fcfc-8699-a0c28ba334cb"
+			EnterpriseID="331f92bd-65db-4490-b965-81ca4df37929" Role="ServiceOrder"
+			HostID="0a3ef66e-e70c-465b-89fc-4663d219ae82" DependentService="" IsOutofProc="True" Is32Bit="False" IsEnterpriseIndependent="False">
+			<NameValues>
+				<NameValuePair>
+					<Name>BasePort</Name>
+					<Value>57872</Value>
+				</NameValuePair>
+				<NameValuePair>
+					<Name>AssemblyQualifiedName</Name>
+					<Value>BizAPP.Runtime.Core.Service.ServiceOrders.ServiceOrderService, BizAPP.Runtime.Core.Framework.ServiceOrder, Version=1.1.0.37, Culture=neutral, PublicKeyToken=5cd91901593ba07f</Value>
+				</NameValuePair>
+				<NameValuePair>
+					<Name>MinPooledProcesses</Name>
+					<Value>1</Value>
+				</NameValuePair>
+				<NameValuePair>
+					<Name>MaxPooledProcesses</Name>
+					<Value>1</Value>
+				</NameValuePair>
+			</NameValues>
+		</Service>
+	</Services>
+</ServiceConfiguration>
